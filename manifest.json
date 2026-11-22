@@ -1,0 +1,30 @@
+{
+  "name": "단어 연금술",
+  "short_name": "단어연금술",
+  "description": "말하는 대로 생겨나는 도트 세계. 꼬마 연금술사 모모와 함께 흩어진 별 26개를 되찾는 모험.",
+  "lang": "ko",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf6e3",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
