@@ -1,0 +1,18 @@
+# wrangler.toml — DRAFT (초안)
+# 회수본에는 배포 설정이 없었다. 이 파일은 코드로부터 재구성한 초안이다.
+# 확정된 것: name(worker.js의 service 필드), main, BATTLE_ROOM 바인딩(worker.js의 env.BATTLE_ROOM),
+# BattleRoom 클래스, classic DO 스토리지(room.js가 ctx.storage.get/put 사용, SQL 아님).
+# ⚠️ compatibility_date는 회수본에 없던 값이라 임의로 넣었다 — 배포 전 실제 설정과 대조할 것.
+# migrations 태그(v1)도 새로 정한 것이다. 기존 운영 워커에 재배포할 때는 기존 마이그레이션과 충돌하지 않는지 확인할 것.
+
+name = "wordalchemy-battle-test"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[durable_objects.bindings]]
+name = "BATTLE_ROOM"
+class_name = "BattleRoom"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["BattleRoom"]
