@@ -13,7 +13,7 @@
    v30: 2026-11-18 patch33 여울 QA (index.html 958a4a84635c).
    v31: 2026-11-18 patch34 발견 노트+힌트 (index.html 3571f3de7fd7).
  */
-const CACHE = 'word-alchemy-v31';
+const CACHE = 'word-alchemy-v32';
 const SHELL = [
   '/', '/index.html', '/manifest.json',
   '/icon-192.png', '/icon-512.png', '/icon-512-maskable.png',
