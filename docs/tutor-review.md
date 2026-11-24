@@ -1,6 +1,6 @@
-# AI Tutor Review — "Momo's Why" explanations (2026-11-22)
+# AI Tutor Review — "Momo's Why" explanations (2026-11-22, patch36 added 2026-11-23)
 
-Excerpted from the internal tutor completion report (`TUTOR-REPORT-20261122.md`). Only the before/after list of the 38 changed explanations is included here; raw review data (prompts, model outputs, scripts) is not part of this repository.
+Excerpted from the internal tutor completion report (`TUTOR-REPORT-20261122.md`). The before/after list of the 38 changed explanations from 2026-11-22 and the 5 changed of the 12 added on 2026-11-23 is included here; raw review data (prompts, model outputs, scripts) is not part of this repository.
 
 ## Review summary
 
@@ -10,6 +10,71 @@ Excerpted from the internal tutor completion report (`TUTOR-REPORT-20261122.md`)
 - Final result: **38 changed / 38 kept**. Sources of the 38 changes: Carbon proposals 28, Neon proposals 7, adjudicator corrections 3.
 - Cost: Carbon $0.4782 (53,996 tokens) + Neon $0.4631 (40,827 tokens) = **$0.9413 total** (approx. ₩1,300, GCP free-trial credit, Vertex `aram-slack-bridge-2026`, global).
 - The explanations are bundled in the game as reviewed text (`TUTOR_WHY` in `index.html`) — no live AI call while playing.
+- Patch36 (2026-11-23): +12 explanations (Neon drafted, Carbon reviewed 7 PASS / 5 FIX, all 5 adopted). Total now **88**. Details in the patch36 section below.
+
+## 추가 설명 12개 — patch36 (2026-11-23)
+
+- New story combinations: 12 (COMBOS 59 → 71), tutor coverage 76 → 88. Verified: 88/88 in `TUTOR_WHY`, 0 missing.
+- Process: Neon (gemini-4-neon) drafted all 12; Carbon (gemini-4-carbon) reviewed them (PASS 7 / FIX 5); the adjudicator adopted all 5 fixes. No second Neon pass — the adjudicator checked tone and length of the 5 fixes directly.
+- Cost: Neon $0.3027 (23,010 tokens) + Carbon $0.0714 = $0.3741. Cumulative tutor cost $0.9413 + $0.3741 ≈ **$1.32**.
+- The 12 below use the same before/after format as the 2026-11-22 list. "전" is the Neon draft; "후" is the final text bundled in the game.
+
+### 바뀐 설명 5개 (Neon 초안 → 최종)
+
+### 왕+집=성 [carbon]
+- 전: 왕이 사는 곳은 나라를 지키고 많은 신하와 함께 지내야 해서 높고 튼튼한 성벽을 둘러 크게 지어요.
+- 후: 왕이 사는 성은 적의 공격을 막고 많은 신하와 함께 지낼 수 있도록 높고 튼튼한 벽을 둘러 크게 지은 집이에요.
+- 근거: Carbon FIX 채택. 주어 '왕이 사는 곳은'과 서술어 '나라를 지키고 많은 신하와 함께 지내야 해서'의 주술 호응이 맞지 않음.
+
+### 바람+얼음=서리 [carbon]
+- 전: 아주 차가운 바람이 불어 밤사이 기온이 뚝 떨어지면 공기 속 작은 물방울이 바로 얼어 하얀 서리가 맺혀요.
+- 후: 차가운 바람이 불어 밤사이 기온이 뚝 떨어지면, 공기 속의 보이지 않는 물기가 풀잎에 닿아 바로 얼면서 하얀 서리가 맺혀요.
+- 근거: Carbon FIX 채택. 사실 오류 — 서리는 공기 속 작은 물방울이 어는 것이 아니라 눈에 보이지 않는 수증기(물기)가 차가운 표면에 닿아 바로 어는 현상.
+
+### 꽃+나무=벚꽃 [carbon]
+- 전: 겨울을 지나 날씨가 따뜻해지면 벚나무 가지마다 연분홍 꽃잎이 한꺼번에 활짝 피어나 거리를 물들여요.
+- 후: 추운 겨울을 지나 날씨가 따뜻해지면 나무 가지마다 연분홍빛 벚꽃이 한꺼번에 활짝 피어나 거리를 예쁘게 물들여요.
+- 근거: Carbon FIX 채택. '꽃잎이 피어나다'는 어색한 표현이고 재료인 나무와의 연결도 자연스럽지 않음.
+
+### 꿀+불=양초 [carbon]
+- 전: 꿀벌이 만든 밀랍으로 초를 빚고 가운데 실에 불을 붙이면 밀랍이 천천히 녹으며 오래오래 불빛을 밝혀요.
+- 후: 꿀벌이 집을 지을 때 만드는 단단한 물질을 뭉쳐 가운데 실에 불을 붙이면, 천천히 녹으면서 오래도록 불빛을 밝히는 양초가 돼요.
+- 근거: Carbon FIX 채택. 초등 저학년에게 '밀랍'은 설명 없이 쓰기 어려운 단어이고, 결과 단어의 일부인 '초'를 그대로 반복함.
+
+### 바람+철=비행기 [carbon]
+- 전: 튼튼한 금속 날개가 빠르게 달릴 때 바람이 날개를 위로 밀어 올려 무거운 동체도 하늘로 높이 뜰 수 있어요.
+- 후: 철로 만든 튼튼한 비행기가 빠르게 달릴 때, 바람이 날개를 위로 밀어 올려 무거운 몸체도 하늘 높이 뜰 수 있어요.
+- 근거: Carbon FIX 채택. '날개가 빠르게 달릴 때'는 어색한 표현이고 '동체'는 초등 저학년에게 어려운 한자어.
+
+### 그대로 쓴 설명 7개 (Neon 초안 = 최종, Carbon PASS)
+
+### 구름+태양=노을 [kept as drafted]
+- 최종: 해가 서쪽으로 질 때 태양 빛이 구름과 공기를 길게 지나면서 붉은빛만 남아 하늘이 주황색으로 물들어요.
+- 근거: Carbon PASS — 빛의 산란으로 노을이 생기는 원리를 초등 저학년 눈높이에 맞춰 쉽고 자연스럽게 설명했습니다.
+
+### 물+종이=종이배 [kept as drafted]
+- 최종: 가벼운 종이를 배 모양으로 접어 물에 띄우면 안쪽에 공기가 담겨 가라앉지 않고 물 위로 떠요.
+- 근거: Carbon PASS — 종이배가 물에 뜨는 이유를 쉬운 어휘와 자연스러운 문장으로 명확하게 전달했습니다.
+
+### 빵+토마토=피자 [kept as drafted]
+- 최종: 납작하게 구운 빵 위에 잘 익은 토마토로 만든 소스를 듬뿍 발라 다시 구우면 향긋한 피자가 돼요.
+- 근거: Carbon PASS — 두 재료가 합쳐져 피자가 되는 조리 과정을 어린이 눈높이에 맞게 자연스럽게 설명했습니다.
+
+### 꿀+반죽=쿠키 [kept as drafted]
+- 최종: 밀가루 반죽에 달콤한 꿀을 섞어 오븐에서 바삭하게 구우면 수분이 날아가며 고소한 과자가 돼요.
+- 근거: Carbon PASS — 반죽과 꿀이 구워져 바삭한 쿠키가 되는 인과관계가 정확하고 문장이 매끄럽습니다.
+
+### 나무+눈=소나무 [kept as drafted]
+- 최종: 소나무는 뾰족한 바늘잎이 추위를 잘 견뎌서 한겨울에 눈이 수북이 쌓여도 잎이 지지 않고 푸른빛을 지켜요.
+- 근거: Carbon PASS — 침엽수인 소나무가 겨울 눈 속에서도 푸른 이유를 정확하고 알기 쉽게 설명했습니다.
+
+### 나무+빛=산소 [kept as drafted]
+- 최종: 나무의 초록 잎은 햇빛을 받아 스스로 양분을 만들면서 사람과 동물에게 꼭 필요한 산소를 공기 중으로 내보내요.
+- 근거: Carbon PASS — 식물의 광합성 작용을 어려운 용어 없이 초등 저학년 수준에 맞춰 정확하게 풀어썼습니다.
+
+### 망원경+책=과학자 [kept as drafted]
+- 최종: 망원경으로 멀리 있는 별을 꼼꼼히 관찰하고 책으로 원리를 연구하며 새로운 사실을 찾아내는 사람이 과학자예요.
+- 근거: Carbon PASS — 망원경과 책을 활용해 탐구하는 과학자의 모습을 자연스럽고 이해하기 쉽게 설명했습니다.
 
 ## 바뀐 설명 38개 (전 → 후)
 
