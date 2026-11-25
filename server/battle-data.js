@@ -1,13 +1,13 @@
 // GENERATED — 손으로 고치지 말 것. extract-battle-data.py가 생성함.
-// 원본: 단어연금술 index.html v5.5 (SHA-256 5538e98d5641d1822469d16630c173640b1dd7bd3f4e081c2d7712c5e9faf494)
+// 원본: 단어연금술 index.html v5.5 (SHA-256 060c3c8a0f9eef402ca4748533e9b9518235abd51360385f3c3170c122c098a7)
 // INF_COMBOS + COMBOS + 날짜 엔진(dailyMaterials/hashDateStr/BFS)은 원문 그대로.
-// COMBOS 57개는 스토리 모드 조합 - 대전 허용 집합은 INF_COMBOS 와 COMBOS의 합집합 (버그 5).
+// COMBOS 71개는 스토리 모드 조합 - 대전 허용 집합은 INF_COMBOS 와 COMBOS의 합집합 (버그 5).
 // 파 계산(dailyComboReach)·경로(dailyComboPath)는 BATTLE_ALL_COMBOS 기준 (patch30 추가 3·4:
 // INF + INF와 쌍이 안 겹치는 COMBOS — 실제 합성 가능한 최단 경로, 같은 쌍은 INF 결과만 유효).
 // v1.1 대전 목표 뽑기(battleTargetPool/battlePickTarget)는 이 파일 하단에 직접 작성.
 
 export const GAME_VERSION = "v5.5";
-export const SOURCE_SHA = "5538e98d5641d1822469d16630c173640b1dd7bd3f4e081c2d7712c5e9faf494";
+export const SOURCE_SHA = "060c3c8a0f9eef402ca4748533e9b9518235abd51360385f3c3170c122c098a7";
 export const INF_HASH = "cfd0b6f33c77a8145dbbae2afcbca2f65897012415f7eca1e4ca1fc97afd14f6"; // 정식 조합 목록 SHA-256
 export const INF_HASH_SHORT = "cfd0b6f3";
 
@@ -239,7 +239,25 @@ const COMBOS = [
   /* ── v4.3 대연금술 3탄 ── 8종 세트의 마지막 3종. 운석과 같은 1단 합성 전용 조합법이다. */
   { a: "돌", b: "흙", result: "지진", chain: 1, msg: "돌과 흙이 크게 흔들려 지진이 났어요!" },
   { a: "별", b: "불", result: "혜성", chain: 1, msg: "별에 불이 붙어 꼬리를 단 혜성이 됐어요!" },
-  { a: "별", b: "어둠", result: "블랙홀", chain: 1, msg: "별이 어둠에 삼켜져 블랙홀이 됐어요!" }
+  { a: "별", b: "어둠", result: "블랙홀", chain: 1, msg: "별이 어둠에 삼켜져 블랙홀이 됐어요!" },
+  /* ── PLAN-v4 (v5.6 방향) ── 동음이의어 폐지(종·기·손)로 일반 조합으로 이동한 2개.
+     기·손은 이제 평문 단어라 팝업 없이 합성된다. B06/B08 최종본 문장 그대로. */
+  { a: "기", b: "운", result: "기운", chain: 1, msg: "기와 운이 만나 몸속 힘인 기운이 됐어요!" },
+  { a: "손", b: "목", result: "손목", chain: 1, msg: "손과 목이 만나 손과 팔을 잇는 손목이 됐어요!" },
+  /* ── v5.11 스토리 확장 (Neon 2026-11-23) ── 스토리 조합 12개 추가 (59→71).
+     알돌 선택: 스토리 12개만. 무한 20개·동음이의어 3개는 미적용. */
+  { a: "태양", b: "구름", result: "노을", chain: 2, msg: "하늘이 붉고 따뜻하게 물드는 예쁜 노을이 됐어요!" },
+  { a: "종이", b: "물", result: "종이배", chain: 2, msg: "물 위를 둥둥 떠다니는 귀여운 종이배가 됐어요!" },
+  { a: "집", b: "왕", result: "성", chain: 3, msg: "왕이 지내는 크고 멋진 성이 세워졌어요!" },
+  { a: "빵", b: "토마토", result: "피자", chain: 3, msg: "고소하고 새콤달콤한 맛있는 피자가 완성됐어요!" },
+  { a: "반죽", b: "꿀", result: "쿠키", chain: 2, msg: "달콤하고 바삭바삭한 쿠키가 구워졌어요!" },
+  { a: "얼음", b: "바람", result: "서리", chain: 1, msg: "풀잎 위에 하얗게 내려앉은 반짝이는 서리가 됐어요!" },
+  { a: "나무", b: "꽃", result: "벚꽃", chain: 2, msg: "봄바람에 흩날리는 분홍빛 벚꽃이 피어났어요!" },
+  { a: "나무", b: "눈", result: "소나무", chain: 1, msg: "하얀 눈 속에서도 늘 푸른 소나무가 됐어요!" },
+  { a: "꿀", b: "불", result: "양초", chain: 2, msg: "어두운 방을 환하게 비춰 주는 양초가 됐어요!" },
+  { a: "철", b: "바람", result: "비행기", chain: 1, msg: "하늘을 씽씽 날아오르는 멋진 비행기가 됐어요!" },
+  { a: "나무", b: "빛", result: "산소", chain: 1, msg: "우리가 숨 쉬는 깨끗하고 상쾌한 산소가 만들어졌어요!" },
+  { a: "망원경", b: "책", result: "과학자", chain: 3, msg: "우주와 자연의 비밀을 푸는 똑똑한 과학자가 됐어요!" }
 ];
 
 const DAILY_EXTRA_MATERIALS = ["돌", "철", "나무", "빛", "어둠", "구름", "눈", "번개", "증기", "얼음", "꽃", "별"];
